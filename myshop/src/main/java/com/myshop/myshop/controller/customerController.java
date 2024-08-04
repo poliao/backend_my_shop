@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import com.myshop.myshop.entity.*;
 
 @RestController
 @RequestMapping("/customers")
+@CrossOrigin(origins = "http://localhost:4200")
 public class customerController {
     @Autowired
     private CustomerService customerService;
@@ -31,7 +33,7 @@ public class customerController {
     private TokenService tokenService;
 
    
-
+    
     @PostMapping
     public ResponseEntity<customer> createCustomer(@RequestBody customer customer) {
         customer savedCustomer = customerService.createCustomer(customer);
@@ -56,6 +58,8 @@ public class customerController {
         customerService.deleteCustomer(id);
         return ResponseEntity.noContent().build();
     }
+
+    
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody customer customer) {
