@@ -18,6 +18,8 @@ public class Product {
 
     private String name;
 
+    private Double costPriceHeader;
+
     private Double wholesalePrice;
 
     private Double retailPrice;
