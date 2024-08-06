@@ -47,10 +47,10 @@ public ResponseEntity<Boolean> checkProductName(@RequestParam("name") String nam
         }
 
         Product product = productOptional.get();
-        product.setImage(productDetails.getImage());
-        product.setName(productDetails.getName());
-        product.setWholesalePrice(productDetails.getWholesalePrice());
-        product.setRetailPrice(productDetails.getRetailPrice());
+        // product.setImage(productDetails.getImage());
+        // product.setName(productDetails.getName());
+        // product.setWholesalePrice(productDetails.getWholesalePrice());
+        // product.setRetailPrice(productDetails.getRetailPrice());
         product.setStock(productDetails.getStock());
 
         Product updatedProduct = productService.saveProduct(product);
