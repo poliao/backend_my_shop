@@ -10,4 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface customerRepository extends JpaRepository<customer, Long> {
     Optional<customer> findByUsername(String username);
 
+    Optional<customer> findByEmail(String email);
+ 
+    boolean existsByEmail(String email);
 }
