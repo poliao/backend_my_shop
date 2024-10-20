@@ -6,6 +6,6 @@ public interface SaleSummary {
     Double getCostPriceHeader();
     Double getRetailPrice();
     Integer getTotalQuantity();
-    Double getTotalSalePrice();
-    Double getTotalCostPriceHeader();
+    Double getTotalProfit();
+   
 }
